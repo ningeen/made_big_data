@@ -37,6 +37,12 @@ trait LinRegParams extends HasFeaturesCol with HasLabelCol with HasOutputCol {
 
   setDefault(nIter -> 100)
 
+  setDefault(featuresCol -> "features")
+
+  setDefault(labelCol -> "target")
+
+  setDefault(outputCol -> "prediction")
+
   protected def validateAndTransformSchema(schema: StructType): StructType = {
     SchemaUtils.checkNumericType(schema, getLabelCol)
 
